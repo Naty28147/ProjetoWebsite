@@ -1,0 +1,24 @@
+{
+  "name": "projetowebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naty28147/ProjetoWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naty28147/ProjetoWebsite/issues"
+  },
+  "homepage": "https://github.com/Naty28147/ProjetoWebsite#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
