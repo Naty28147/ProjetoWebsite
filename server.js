@@ -1,26 +1,37 @@
-// Requisita o módulo Express instalado para que possa ser utilizado na aplicação
 const express = require('express')
-
-// Cria uma instância da aplicação/Express
 const app = express()
+const exphbs = require('express-handlebars')
+const port = 3000
 
-// Registra uma rota get(sinalizando leitura) apontando para a raiz '/'. Exemplo, exemplo.com/
-// req: Request - Em resumo, corresponde as entradas, tudo aquilo que é enviado para o servidor 
-// res: Response - Corresponde as saídas, tudo aquilo que é desejado enviar para o exterior
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
+
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+)
+app.use(express.json())
+
+app.use(express.static('public'))
+
+app.get('/users/add', (req, res) => {
+  res.render('userform')
+  })
+  
+app.post('/users/save', (req, res) => {
+  const name = req.body.name
+  const age = req.body.age
+  
+  const user = { name: name, age: age }
+  res.render('viewuser', { user: user })
+  
+  })
+
 app.get('/', (req, res) => {
-  // Envia uma string de resposta para a requisição realizada
-  res.send('Olá mundo. Ir para sobre')
+    res.render('home')
+  })  
+
+app.listen(port, () => {
+  console.log('Server online!')
 })
-
-// Inicializa o servidor observando a porta 3000
-app.listen(3000, () => {
-  console.log('Server online')
-})
-
-// ...
-
-app.get('/sobre', (req, res) => {
-  res.send("Um simples tutorial de NodeJS")
-})
-
-// ...
