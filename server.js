@@ -21,10 +21,11 @@ app.get('/users/add', (req, res) => {
   
 app.post('/users/save', (req, res) => {
   const name = req.body.name;
-  const age = req.body.age;
+  const dataNasc = req.body.dataNasc;
   const email = req.body.email;
+  const func = req.body.func;
   
-  const user = { name: name, email: email, age: age }
+  const user = { name: name, dataNasc: dataNasc, email: email,  func: func }
   res.render('viewuser', { user: user })
   
   })
