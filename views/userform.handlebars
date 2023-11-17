@@ -1,18 +1,33 @@
-<div class="container-fluid col-6">
-<form action="/users/save" method="post">
+<div class="container">
+    <form action="/users/save" method="post">
 
-<div class="form-group col-7">
-    <label for="nome">Nome:</label>
-    <input type="text" class="form-control" id="nome" name="name">
-</div>
-<div class="form-group col-3">
-    <label for="idade">Idade:</label>
-    <input type="text" class="form-control" id="idade" name="age">
-</div>
-<div class="form-group col-7">
-    <label for="email">E-mail:</label>
-    <input type="email" class="form-control" id="email" name="email"><br>
-</div>
-<button type="submit" class="btn btn-primary">Enviar</button>
-</form>
+        <div class="row">
+            <div class="col-4">
+                <label>Nome:</label>
+                <input type="text" class="form-control" name="name" id="nome">
+            </div>
+            <div class="col-2">
+                <label>Data de nascimento:</label>
+                <input type="date" class="form-control" name="dataNasc" id="dataNasc">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <label>E-mail:</label>
+                <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="col-2">
+                <label for="">Funcionário:</label>
+                <select class="form-control" name="func">
+                    <option value="sim">Sim</option>
+                    <option value="não">Não</option>
+                </select>
+            </div>
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
 </div>
